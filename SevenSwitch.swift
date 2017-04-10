@@ -30,8 +30,8 @@ import QuartzCore
     // public
     
     /*
-    *   Set (without animation) whether the switch is on or off
-    */
+     *   Set (without animation) whether the switch is on or off
+     */
     @IBInspectable open var on: Bool {
         get {
             return switchValue
@@ -41,11 +41,11 @@ import QuartzCore
             self.setOn(newValue, animated: false)
         }
     }
-
+    
     /*
-    *	Sets the background color that shows when the switch off and actively being touched.
-    *   Defaults to light gray.
-    */
+     *	Sets the background color that shows when the switch off and actively being touched.
+     *   Defaults to light gray.
+     */
     @IBInspectable open var activeColor: UIColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1) {
         willSet {
             if self.on && !self.isTracking {
@@ -55,9 +55,9 @@ import QuartzCore
     }
     
     /*
-    *	Sets the background color when the switch is off.
-    *   Defaults to clear color.
-    */
+     *	Sets the background color when the switch is off.
+     *   Defaults to clear color.
+     */
     @IBInspectable open var inactiveColor: UIColor = UIColor.clear {
         willSet {
             if !self.on && !self.isTracking {
@@ -67,9 +67,9 @@ import QuartzCore
     }
     
     /*
-    *   Sets the background color that shows when the switch is on.
-    *   Defaults to green.
-    */
+     *   Sets the background color that shows when the switch is on.
+     *   Defaults to green.
+     */
     @IBInspectable open var onTintColor: UIColor = UIColor(red: 0.3, green: 0.85, blue: 0.39, alpha: 1) {
         willSet {
             if self.on && !self.isTracking {
@@ -80,8 +80,8 @@ import QuartzCore
     }
     
     /*
-    *   Sets the border color that shows when the switch is off. Defaults to light gray.
-    */
+     *   Sets the border color that shows when the switch is off. Defaults to light gray.
+     */
     @IBInspectable open var borderColor: UIColor = UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 1) {
         willSet {
             if !self.on {
@@ -91,8 +91,8 @@ import QuartzCore
     }
     
     /*
-    *	Sets the knob color. Defaults to white.
-    */
+     *	Sets the knob color. Defaults to white.
+     */
     @IBInspectable open var thumbTintColor: UIColor = UIColor.white {
         willSet {
             if !userDidSpecifyOnThumbTintColor {
@@ -105,8 +105,8 @@ import QuartzCore
     }
     
     /*
-    *	Sets the knob color that shows when the switch is on. Defaults to white.
-    */
+     *	Sets the knob color that shows when the switch is on. Defaults to white.
+     */
     @IBInspectable open var onThumbTintColor: UIColor = UIColor.white {
         willSet {
             userDidSpecifyOnThumbTintColor = true
@@ -117,8 +117,8 @@ import QuartzCore
     }
     
     /*
-    *	Sets the shadow color of the knob. Defaults to gray.
-    */
+     *	Sets the shadow color of the knob. Defaults to gray.
+     */
     @IBInspectable open var shadowColor: UIColor = UIColor.gray {
         willSet {
             thumbView.layer.shadowColor = newValue.cgColor
@@ -126,10 +126,10 @@ import QuartzCore
     }
     
     /*
-    *	Sets whether or not the switch edges are rounded.
-    *   Set to NO to get a stylish square switch.
-    *   Defaults to YES.
-    */
+     *	Sets whether or not the switch edges are rounded.
+     *   Set to NO to get a stylish square switch.
+     *   Defaults to YES.
+     */
     @IBInspectable open var isRounded: Bool = true {
         willSet {
             if newValue {
@@ -146,8 +146,8 @@ import QuartzCore
     }
     
     /*
-    *   Sets the image that shows on the switch thumb.
-    */
+     *   Sets the image that shows on the switch thumb.
+     */
     @IBInspectable open var thumbImage: UIImage! {
         willSet {
             thumbImageView.image = newValue
@@ -155,10 +155,10 @@ import QuartzCore
     }
     
     /*
-    *   Sets the image that shows when the switch is on.
-    *   The image is centered in the area not covered by the knob.
-    *   Make sure to size your images appropriately.
-    */
+     *   Sets the image that shows when the switch is on.
+     *   The image is centered in the area not covered by the knob.
+     *   Make sure to size your images appropriately.
+     */
     @IBInspectable open var onImage: UIImage! {
         willSet {
             onImageView.image = newValue
@@ -166,10 +166,10 @@ import QuartzCore
     }
     
     /*
-    *	Sets the image that shows when the switch is off.
-    *   The image is centered in the area not covered by the knob.
-    *   Make sure to size your images appropriately.
-    */
+     *	Sets the image that shows when the switch is off.
+     *   The image is centered in the area not covered by the knob.
+     *   Make sure to size your images appropriately.
+     */
     @IBInspectable open var offImage: UIImage! {
         willSet {
             offImageView.image = newValue
@@ -177,15 +177,15 @@ import QuartzCore
     }
     
     /*
-    *	Sets the text that shows when the switch is on.
-    *   The text is centered in the area not covered by the knob.
-    */
+     *	Sets the text that shows when the switch is on.
+     *   The text is centered in the area not covered by the knob.
+     */
     open var onLabel: UILabel!
     
     /*
-    *	Sets the text that shows when the switch is off.
-    *   The text is centered in the area not covered by the knob.
-    */
+     *	Sets the text that shows when the switch is off.
+     *   The text is centered in the area not covered by the knob.
+     */
     open var offLabel: UILabel!
     
     // internal
@@ -203,8 +203,8 @@ import QuartzCore
     fileprivate var switchValue: Bool = false
     
     /*
-    *   Initialization
-    */
+     *   Initialization
+     */
     public convenience init() {
         self.init(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
     }
@@ -224,8 +224,8 @@ import QuartzCore
     
     
     /*
-    *   Setup the individual elements of the switch and set default values
-    */
+     *   Setup the individual elements of the switch and set default values
+     */
     fileprivate func setup() {
         
         // background
@@ -280,95 +280,19 @@ import QuartzCore
         thumbImageView.contentMode = UIViewContentMode.center
         thumbImageView.autoresizingMask = UIViewAutoresizing.flexibleWidth
         thumbView.addSubview(thumbImageView)
-    
+        
         self.on = false
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.addGestureRecognizer(tap)
     }
     
-    override open func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        super.beginTracking(touch, with: event)
-        
-        startTrackingValue = self.on
-        didChangeWhileTracking = false
-        
-        let activeKnobWidth = self.bounds.size.height - 2 + 5
-        isAnimating = true
-        
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: [UIViewAnimationOptions.curveEaseOut, UIViewAnimationOptions.beginFromCurrentState], animations: {
-                if self.on {
-                    self.thumbView.frame = CGRect(x: self.bounds.size.width - (activeKnobWidth + 1), y: self.thumbView.frame.origin.y, width: activeKnobWidth, height: self.thumbView.frame.size.height)
-                    self.backgroundView.backgroundColor = self.onTintColor
-                    self.thumbView.backgroundColor = self.onThumbTintColor
-                }
-                else {
-                    self.thumbView.frame = CGRect(x: self.thumbView.frame.origin.x, y: self.thumbView.frame.origin.y, width: activeKnobWidth, height: self.thumbView.frame.size.height)
-                    self.backgroundView.backgroundColor = self.activeColor
-                    self.thumbView.backgroundColor = self.thumbTintColor
-                }
-            }, completion: { finished in
-                self.isAnimating = false
-        })
-        
-        let shadowAnim = CABasicAnimation(keyPath: "shadowPath")
-        shadowAnim.duration = 0.3
-        shadowAnim.fromValue = thumbView.layer.shadowPath
-        shadowAnim.toValue = UIBezierPath(roundedRect: thumbView.bounds, cornerRadius: thumbView.layer.cornerRadius).cgPath
-        thumbView.layer.add(shadowAnim, forKey: "shadowPath")
-        thumbView.layer.shadowPath = UIBezierPath(roundedRect: thumbView.bounds, cornerRadius: thumbView.layer.cornerRadius).cgPath
-        
-        return true
+    open func setThumb(_ tint:UIColor){
+        self.thumbImageView.tintColor = tint
     }
     
-    override open func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        super.continueTracking(touch, with: event)
-        
-        // Get touch location
-        let lastPoint = touch.location(in: self)
-        
-        // update the switch to the correct visuals depending on if
-        // they moved their touch to the right or left side of the switch
-        if lastPoint.x > self.bounds.size.width * 0.5 {
-            self.showOn(true)
-            if !startTrackingValue {
-                didChangeWhileTracking = true
-            }
-        }
-        else {
-            self.showOff(true)
-            if startTrackingValue {
-                didChangeWhileTracking = true
-            }
-        }
-
-        return true
-    }
-    
-    override open func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        super.endTracking(touch, with: event)
-
-        let previousValue = self.on
-
-        if didChangeWhileTracking {
-            self.setOn(currentVisualValue, animated: true)
-        }
-        else {
-            self.setOn(!self.on, animated: true)
-        }
-        
-        if previousValue != self.on {
-            self.sendActions(for: UIControlEvents.valueChanged)
-        }
-    }
-    
-    override open func cancelTracking(with event: UIEvent?) {
-        super.cancelTracking(with: event)
-        
-        // just animate back to the original value
-        if self.on {
-            self.showOn(true)
-        }
-        else {
-            self.showOff(true)
-        }
+    func handleTap(){
+        self.setOn(!self.on, animated: true)
     }
     
     override open func layoutSubviews() {
@@ -404,8 +328,8 @@ import QuartzCore
     }
     
     /*
-    *   Set the state of the switch to on or off, optionally animating the transition.
-    */
+     *   Set the state of the switch to on or off, optionally animating the transition.
+     */
     open func setOn(_ isOn: Bool, animated: Bool) {
         switchValue = isOn
         
@@ -415,21 +339,23 @@ import QuartzCore
         else {
             self.showOff(animated)
         }
+        
+        self.sendActions(for: UIControlEvents.valueChanged)
     }
     
     /*
-    *   Detects whether the switch is on or off
-    *
-    *	@return	BOOL YES if switch is on. NO if switch is off
-    */
+     *   Detects whether the switch is on or off
+     *
+     *	@return	BOOL YES if switch is on. NO if switch is off
+     */
     open func isOn() -> Bool {
         return self.on
     }
     
     /*
-    *   update the looks of the switch to be in the on position
-    *   optionally make it animated
-    */
+     *   update the looks of the switch to be in the on position
+     *   optionally make it animated
+     */
     fileprivate func showOn(_ animated: Bool) {
         let normalKnobWidth = self.bounds.size.height - 2
         let activeKnobWidth = normalKnobWidth + 5
@@ -482,9 +408,9 @@ import QuartzCore
     }
     
     /*
-    *   update the looks of the switch to be in the off position
-    *   optionally make it animated
-    */
+     *   update the looks of the switch to be in the off position
+     *   optionally make it animated
+     */
     fileprivate func showOff(_ animated: Bool) {
         let normalKnobWidth = self.bounds.size.height - 2
         let activeKnobWidth = normalKnobWidth + 5
