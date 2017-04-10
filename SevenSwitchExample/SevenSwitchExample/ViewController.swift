@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var ibSwitch: SevenSwitch!
+    @IBOutlet var ibSwitch: TPCustomSwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         // this will create the switch with default dimensions, you'll still need to set the position though
         // you also have the option to pass in a frame of any size you choose
-        let mySwitch = SevenSwitch(frame: CGRect.zero)
+        let mySwitch = TPCustomSwitch(frame: CGRect.zero)
         mySwitch.center = CGPoint(x: self.view.bounds.size.width * 0.5, y: self.view.bounds.size.height * 0.5)
         mySwitch.addTarget(self, action: #selector(ViewController.switchChanged(_:)), for: UIControlEvents.valueChanged)
         self.view.addSubview(mySwitch)
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         mySwitch.on = true
         
         // Example of a bigger switch with images
-        let mySwitch2 = SevenSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        let mySwitch2 = TPCustomSwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         mySwitch2.center = CGPoint(x: self.view.bounds.size.width * 0.5, y: self.view.bounds.size.height * 0.5 - 80)
         mySwitch2.addTarget(self, action: #selector(ViewController.switchChanged(_:)), for: UIControlEvents.valueChanged)
         mySwitch2.offImage = UIImage(named: "cross.png")
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         mySwitch2.setOn(true, animated: true)
         
         // Example of color customization
-        let mySwitch3 = SevenSwitch(frame: CGRect.zero)
+        let mySwitch3 = TPCustomSwitch(frame: CGRect.zero)
         mySwitch3.center = CGPoint(x: self.view.bounds.size.width * 0.5, y: self.view.bounds.size.height * 0.5 + 70)
         mySwitch3.addTarget(self, action: #selector(ViewController.switchChanged(_:)), for: UIControlEvents.valueChanged)
         self.view.addSubview(mySwitch3)
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         mySwitch3.shadowColor = UIColor.black
     }
     
-    func switchChanged(_ sender: SevenSwitch) {
+    func switchChanged(_ sender: TPCustomSwitch) {
         print("Changed value to: \(sender.on)")
     }
 }
