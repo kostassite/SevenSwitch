@@ -1,6 +1,6 @@
 {
   "name": "TPCustomSwitch",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "summary": "iOS7 style drop in replacement for UISwitch.",
   "homepage": "https://github.com/GianniCarlo/SevenSwitch",
   "license": {
@@ -12,12 +12,12 @@
   },
   "source": {
     "git": "https://github.com/GianniCarlo/SevenSwitch.git",
-    "tag": "2.1.2"
+    "tag": "2.1.3"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "SevenSwitch.swift",
+  "source_files": "TPCustomSwitch.swift",
   "exclude_files": "Classes/Exclude",
   "frameworks": [
     "UIKit",
