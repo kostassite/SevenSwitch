@@ -1,4 +1,7 @@
-## SevenSwitch
+Based on [SevenSwitch](https://github.com/bvogelzang/SevenSwitch)
+
+Main difference is that swipe on switch was replaced for tap on switch to toggle the state. Also if you want to tint the ImageView of the thumb, you can use `setThumb(_ tint:UIColor)`
+## TPCustomSwitch
 
 iOS7 style drop in replacement for UISwitch
 
@@ -11,7 +14,7 @@ iOS7 style drop in replacement for UISwitch
 ### Cocoapods
 
 ```
-pod 'SevenSwitch', '~> 2.1'
+pod 'TPCustomSwitch', '~> 2.1.3'
 ```
 
 *Swift support was added in version `2.0`. If your project does not support swift you can use `1.4`.*
